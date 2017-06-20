@@ -217,7 +217,11 @@ class aplf1(off.Variable):
         e0 = famille('aplf1_redevance_seuil', period)
         k = famille('aplf1_taux', period)
         brut = k * np.maximum(e - e0, 0)
-        return .995 * brut
+        net  = .995 * brut
+        # [2] Articles 5 et 6
+        net = net.clip(max = e - 26.68)
+        net[net < 15.] = 0.
+        return net
 
 class aplf2(off.Variable):
     column = off.FloatCol
@@ -231,4 +235,8 @@ class aplf2(off.Variable):
         e0 = famille('aplf2_redevance_seuil', period)
         k = famille('aplf2_taux', period)
         brut = k * np.maximum(e - e0, 0)
-        return .995 * brut
+        net  = .995 * brut
+        # [2] Articles 5 et 6
+        net = net.clip(max = e - 15)
+        net[net < 15.] = 0.
+        return net
