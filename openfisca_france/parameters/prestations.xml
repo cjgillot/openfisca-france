@@ -744,6 +744,54 @@
         <VALUE deb="2001-01-01" valeur="0.0085" />
       </CODE>
     </NODE>
+    <NODE code="foyer1" description="Taux utilisés pour la version logement-foyer 1">
+      <NODE code="nombre_de_parts">
+        <CODE code="menage_ou_isole_avec_1_enfant" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="2.5" />
+        </CODE>
+        <CODE code="menage_ou_isole_avec_2_enfants" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="3.0" />
+        </CODE>
+        <CODE code="menage_ou_isole_avec_3_enfants" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="3.7" />
+        </CODE>
+        <CODE code="menage_ou_isole_avec_4_enfants" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="4.3" />
+        </CODE>
+        <CODE code="menage_ou_isole_par_enfant_en_plus" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="0.5" />
+        </CODE>
+        <CODE code="menage_seul" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="1.8" />
+        </CODE>
+        <CODE code="personne_isolee_sans_enfant" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="1.4" />
+        </CODE>
+      </NODE>
+      <NODE code="nombre_de_parts">
+        <CODE code="menage_ou_isole_avec_1_enfant" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="2.5" />
+        </CODE>
+        <CODE code="menage_ou_isole_avec_2_enfants" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="3.0" />
+        </CODE>
+        <CODE code="menage_ou_isole_avec_3_enfants" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="3.7" />
+        </CODE>
+        <CODE code="menage_ou_isole_avec_4_enfants" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="4.3" />
+        </CODE>
+        <CODE code="menage_ou_isole_par_enfant_en_plus" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="0.5" />
+        </CODE>
+        <CODE code="menage_seul" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="1.8" />
+        </CODE>
+        <CODE code="personne_isolee_sans_enfant" format="float" origin="ipp">
+          <VALUE deb="2016-10-16" fuzzy="true" valeur="1.4" />
+        </CODE>
+      </NODE>
+    </NODE>
   </NODE>
   <NODE code="ajpp" origin="ipp">
     <CODE code="duree_de_l_allocation_annees" origin="ipp">
