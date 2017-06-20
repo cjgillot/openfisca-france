@@ -11,7 +11,7 @@ class uc(Variable):
     column = FloatCol
     entity = Menage
     label = u"Unités de consommation"
-    definition_period = YEAR
+    definition_period = MONTH
 
     def formula(self, simulation, period):
         '''
