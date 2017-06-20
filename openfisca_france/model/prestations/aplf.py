@@ -50,7 +50,7 @@ class aplf1_n(off.Variable):
     label  = u"APL foyer 1 - nombre de parts"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         al_nb_pac = famille('al_nb_personnes_a_charge', period)
         couple = famille('al_couple', period)
         return n_valeurs_1(couple, al_nb_pac)
@@ -61,7 +61,7 @@ class aplf2_n(off.Variable):
     label  = u"APL foyer 2 - nombre de parts"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         al_nb_pac = famille('al_nb_personnes_a_charge', period)
         couple = famille('al_couple', period)
         return n_valeurs_2(couple, al_nb_pac)
@@ -89,7 +89,7 @@ class aplf_redevance_plafond(off.Variable):
     label  = u"APL foyer - Redevance plafond"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         al_nb_pac = famille('al_nb_personnes_a_charge', period)
         couple = famille('al_couple', period)
         zone = famille.demandeur.menage('zone_apl', period)
@@ -103,7 +103,7 @@ class aplf_redevance(off.Variable):
     label  = u"APL foyer - Redevance"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         plafond = famille('aplf_redevance_plafond', period)
         e = famille.demandeur.menage('loyer', period)
         return np.minimum(e, plafond)
@@ -149,7 +149,7 @@ class aplf1_redevance_seuil(off.Variable):
     label  = u"APL foyer 1 - Redevance seuil"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         R = famille('aide_logement_base_ressources', period)
         N = famille('aplf1_n', period)
         return aplf1_e0.calc(R, N)
@@ -160,7 +160,7 @@ class aplf2_redevance_seuil(off.Variable):
     label  = u"APL foyer 2 - Redevance seuil"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         R = famille('aide_logement_base_ressources', period)
         N = famille('aplf2_n', period)
         return aplf2_e0.calc(R, N)
@@ -172,7 +172,7 @@ class aplf1_taux(off.Variable):
     label  = u"APL foyer 1 - Taux de prise en charge"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         # CCH R351-61
         R = famille('aide_logement_base_ressources', period)
         N = famille('aplf1_n', period)
@@ -190,7 +190,7 @@ class aplf2_taux(off.Variable):
     label  = u"APL foyer 2 - Taux de prise en charge"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         # CCH R351-61-1
         R = famille('aide_logement_base_ressources', period)
         N = famille('aplf2_n', period)
@@ -211,7 +211,7 @@ class aplf1(off.Variable):
     label  = u"APL foyer 1"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         N = famille('aplf1_n', period)
         e = famille('aplf_redevance', period)
         e0 = famille('aplf1_redevance_seuil', period)
@@ -229,7 +229,7 @@ class aplf2(off.Variable):
     label  = u"APL foyer 2"
     definition_period = off.MONTH
 
-    def function(famille, period, legislation):
+    def formula(famille, period, legislation):
         N = famille('aplf2_n', period)
         e = famille('aplf_redevance', period)
         e0 = famille('aplf2_redevance_seuil', period)
