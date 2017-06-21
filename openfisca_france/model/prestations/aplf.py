@@ -125,7 +125,7 @@ class aplf_tranchage: # {{{
         for t in range(0, self.tranches.size):
             tr_mini = self.tranches[t] * N
             tr_taux = self.taux[t+1] - self.taux[t]
-            E0 += tr_taux * np.maximum(R - tr_taux, 0)
+            E0 += tr_taux * np.maximum(R - tr_mini, 0)
         E0 += self.supp * N
         E0 /= 12
         return E0
